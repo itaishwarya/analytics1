@@ -29,15 +29,22 @@
   <link href="css/responsive.css" rel="stylesheet" />
   <script src="https://assets.adobedtm.com/e72b4113c11a/fbef947e675a/launch-11212900a7d1-development.min.js" async></script>
   <script>
-    var digitalData=
-      {
-        'Gender': 'Male',
-        'Preferred_destination':'India',
-        'Customer_type': 'Low_Value_Customer',
-        window.digitalData = window.digitalData || {};
-        window.digitalData.buttonClickCounter = window.digitalData.buttonClickCounter || 0;
+    var digitalData = {
+      'Gender': 'Male',
+      'Preferred_destination': 'India',
+      'Customer_type': 'Low_Value_Customer'
+    };
+  
+    // Add event listener for button clicks
+    document.addEventListener('click', function(event) {
+      if (event.target.classList.contains('.nav-link[href="index.html"]')) {
+        // Dispatch custom event to increment button click counter
+        var incrementEvent = new Event('Button Click events');
+        document.dispatchEvent(incrementEvent);
       }
-  </script> 
+    });
+  </script>
+
 </head>
 
 <body>
